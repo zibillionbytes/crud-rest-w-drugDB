@@ -5,6 +5,7 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -31,8 +32,15 @@ public class DrugDAOImpl implements DrugDAO {
     }
 
     @Override
-    public Drug findById(int theId) {
-        return null;
+    @Transactional
+    public List<Drug> findByMedicalCondition(String medicalCondition) {
+
+        TypedQuery<Drug> theQuery = entityManager.createQuery(
+                "FROM Drug WHERE medicalCondition = :medicalCondition", Drug.class);
+
+        theQuery.setParameter("medicalCondition", medicalCondition);
+
+        return theQuery.getResultList();
     }
 
     @Override
