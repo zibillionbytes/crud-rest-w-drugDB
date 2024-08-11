@@ -15,7 +15,7 @@ public class Drug {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="drug_id")
-    private int drug_id;
+    private int drugId;
 
     @Column(name = "drug_name")
     public String drugName;
@@ -102,11 +102,11 @@ public class Drug {
     // Getter and Setters
 
     public int getDrug_id() {
-        return drug_id;
+        return drugId;
     }
 
     public void setDrug_id(int drug_id) {
-        this.drug_id = drug_id;
+        this.drugId = drug_id;
     }
 
     public String getDrugName() {
@@ -251,7 +251,7 @@ public class Drug {
     @Override
     public String toString() {
         return "Drug{" +
-                "drug_id=" + drug_id +
+                "drug_id=" + drugId +
                 ", drugName='" + drugName + '\'' +
                 ", medicalCondition='" + medicalCondition + '\'' +
                 ", sideEffects='" + sideEffects + '\'' +

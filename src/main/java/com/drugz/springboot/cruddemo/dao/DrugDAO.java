@@ -9,10 +9,13 @@ public interface DrugDAO {
 
     List<Drug> findAll();
 
+    List<Drug> searchByAnyColumn(String searchTerm);
+
+    /*
     @Transactional
     List<Drug> findByMedicalCondition(String medicalCondition);
-
+    */
     Drug save(Drug theDrug);
 
-    void deleteById(int theId);
+    void deleteById(int drugId);
 }

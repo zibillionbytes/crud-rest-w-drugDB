@@ -19,10 +19,19 @@ public class DrugServiceImpl implements DrugService {
     public List<Drug> findAll() {return drugDAO.findAll();}
 
     @Override
+    public List<Drug> searchByAnyColumn(String searchTerm) {
+        return drugDAO.searchByAnyColumn(searchTerm);
+    }
+
+
+    /*
+    @Override
     public List<Drug> findByMedicalCondition(String medicalCondition) {
 
         return drugDAO.findByMedicalCondition(medicalCondition);
     }
+     */
+
 
     @Override
     public Drug save(Drug theDrug) {
